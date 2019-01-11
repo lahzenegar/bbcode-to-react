@@ -21,7 +21,12 @@ export default class ImageTag extends Tag {
   }
 
   toReact() {
-    const src = this.getContent(true);
+    let src = this.getContent(true);
+    const patt = new RegExp('^(http|https):\/\/');
+    if (!patt.test(src)) {
+      src = this.params.cdnUrl + src;
+    }
+    
     return (
       <img
         role="presentation"

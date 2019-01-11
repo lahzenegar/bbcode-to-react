@@ -1,3 +1,8 @@
+<a name="0.2.11"></a>
+## [0.2.11](https://github.com/JimLiu/bbcode-to-react/compare/0.2.9...0.2.11) (2019-01-11)
+
+
+
 <a name="0.2.9"></a>
 ## [0.2.9](https://github.com/JimLiu/bbcode-to-react/compare/0.2.8...0.2.9) (2018-04-24)
 

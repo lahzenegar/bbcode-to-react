@@ -6,8 +6,9 @@ import Tag from './tag';
 import Renderer from './renderer';
 
 export default class Parser {
-  constructor(allowedTags = null) {
+  constructor(allowedTags = null, cdnUrl = null) {
     this.tags = {};
+    this.cdnUrl = cdnUrl;
 
     if (!allowedTags) {
       this.tags = defaultTags;
@@ -123,7 +124,7 @@ export default class Parser {
             this.createTextNode(current, token);
             continue;
           }
-
+          if (this.cdnUrl) params.push(['cdnUrl', this.cdnUrl]);
           const tag = new cls(this.renderer, {
             name: tagName,
             parent: current,
@@ -138,7 +139,6 @@ export default class Parser {
         this.createTextNode(current, token);
       }
     }
-
     return root;
   }
 
